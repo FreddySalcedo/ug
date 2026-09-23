@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ucayali Green - Mantenimiento integral, infraestructura, seguridad industrial y gestión ambiental.">
+    <title>Ucayali Green | Mantenimiento Integral</title>
+
+    <style>
+        :root {
+            --verde-oscuro: #0B3D2E;
+            --verde-bosque: #14532D;
+            --verde-esmeralda: #047857;
+            --verde-medio: #059669;
+            --verde-jade: #10B981;
+            --verde-suave: #34D399;
+            --verde-pastel: #A7F3D0;
+            --verde-claro: #D1FAE5;
+            --verde-gris: #DDEDE5;
+            --verde-oliva: #556B2F;
+            --verde-salvia: #879F87;
+            --verde-menta: #98FB98;
+            --negro: #030907;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--negro);
+            color: var(--verde-gris);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 61, 46, .97);
+            border-bottom: 1px solid var(--verde-esmeralda);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+        }
+
+        .logo-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--verde-pastel), var(--verde-jade));
+            border: 3px solid var(--verde-menta);
+            color: var(--verde-oscuro);
+            font-size: 27px;
+            box-shadow: 0 0 25px rgba(52,211,153,.25);
+        }
+
+        .logo-text strong {
+            display: block;
+            color: var(--blanco);
+            font-size: 1.35rem;
+        }
+
+        .logo-text span {
+            color: var(--verde-suave);
+            font-size: .72rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a {
+            display: block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: var(--verde-gris);
+            font-size: .94rem;
+            transition: .25s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: var(--verde-medio);
+            color: var(--blanco);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--verde-jade);
+            color: var(--verde-pastel);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.3rem;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 80% 25%, rgba(16,185,129,.22), transparent 28%),
+                linear-gradient(135deg, var(--negro), var(--verde-oscuro) 58%, #063d2c);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 480px;
+            height: 480px;
+            right: -170px;
+            bottom: -220px;
+            border-radius: 50%;
+            border: 70px solid rgba(52,211,153,.07);
+        }
+
+        .hero-content {
+            max-width: 720px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow,
+        .section-label {
+            color: var(--verde-suave);
+            letter-spacing: 3px;
+            font-size: .78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 15px 0 20px;
+            color: var(--blanco);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.05;
+        }
+
+        h1 span {
+            color: var(--verde-jade);
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: var(--verde-gris);
+            font-size: 1.12rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 9px;
+            border: 1px solid var(--verde-jade);
+            font-weight: 700;
+            transition: .25s;
+        }
+
+        .btn-primary {
+            background: var(--verde-medio);
+            color: var(--blanco);
+        }
+
+        .btn-primary:hover {
+            background: var(--verde-jade);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: var(--verde-pastel);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--verde-bosque);
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 42px;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--verde-gris);
+            font-size: .9rem;
+        }
+
+        .badge b {
+            color: var(--verde-menta);
+            font-size: 1.2rem;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 85px 0;
+        }
+
+        .section-head {
+            margin-bottom: 35px;
+        }
+
+        .section-head h2 {
+            color: var(--blanco);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-top: 8px;
+        }
+
+        .section-head p {
+            max-width: 720px;
+            margin-top: 10px;
+            color: var(--verde-salvia);
+        }
+
+        /* SERVICES */
+        #servicios {
+            background: var(--verde-oscuro);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--verde-claro);
+            color: var(--verde-oscuro);
+            border: 1px solid var(--verde-pastel);
+            border-radius: 15px;
+            padding: 27px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: var(--verde-suave);
+            box-shadow: 0 15px 35px rgba(16,185,129,.15);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--verde-oscuro);
+            color: var(--verde-menta);
+            font-size: 1.4rem;
+            margin-bottom: 17px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+        }
+
+        .card p {
+            font-size: .92rem;
+        }
+
+        /* ABOUT */
+        #nosotros {
+            background: var(--negro);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-visual {
+            min-height: 390px;
+            border-radius: 20px;
+            overflow: hidden;
+            background:
+                linear-gradient(145deg, rgba(16,185,129,.25), rgba(11,61,46,.9)),
+                radial-gradient(circle at 30% 30%, var(--verde-jade), transparent 17%),
+                linear-gradient(135deg, var(--verde-bosque), var(--verde-oscuro));
+            border: 1px solid var(--verde-esmeralda);
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+        .leaf-logo {
+            font-size: 8rem;
+            filter: drop-shadow(0 0 25px rgba(152,251,152,.2));
+        }
+
+        .about-visual::after {
+            content: "🌱  Construimos un futuro más seguro y sostenible";
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            right: 20px;
+            padding: 14px;
+            border-radius: 10px;
+            background: rgba(3,9,7,.72);
+            color: var(--verde-pastel);
+            text-align: center;
+        }
+
+        .about-text h2 {
+            color: var(--blanco);
+            font-size: 2.5rem;
+            margin: 8px 0 15px;
+        }
+
+        .about-text > p {
+            color: var(--verde-gris);
+            margin-bottom: 25px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .mini-card {
+            border-left: 3px solid var(--verde-jade);
+            background: #071b14;
+            padding: 18px;
+        }
+
+        .mini-card h3 {
+            color: var(--verde-suave);
+            margin-bottom: 5px;
+        }
+
+        /* PORTFOLIO */
+        #portafolio {
+            background: linear-gradient(180deg, var(--verde-bosque), var(--verde-oscuro));
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .project {
+            min-height: 240px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--verde-esmeralda);
+            background:
+                linear-gradient(to top, rgba(3,9,7,.95), rgba(3,9,7,.05)),
+                radial-gradient(circle at 50% 20%, var(--verde-jade), var(--verde-bosque) 35%, var(--negro) 80%);
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: scale(1.02);
+            border-color: var(--verde-suave);
+        }
+
+        .project span {
+            color: var(--verde-menta);
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project h3 {
+            color: var(--blanco);
+            margin-top: 5px;
+        }
+
+        /* CONTACT */
+        #contacto {
+            background: var(--negro);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 35px;
+        }
+
+        .contact-info {
+            background: var(--verde-oscuro);
+            border: 1px solid var(--verde-esmeralda);
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .contact-item .contact-icon {
+            color: var(--verde-menta);
+            font-size: 1.35rem;
+            min-width: 25px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--blanco);
+        }
+
+        form {
+            background: #071b14;
+            padding: 30px;
+            border: 1px solid var(--verde-esmeralda);
+            border-radius: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        label {
+            display: block;
+            color: var(--verde-pastel);
+            font-size: .85rem;
+            margin-bottom: 6px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 17px;
+            border: 1px solid var(--verde-oliva);
+            border-radius: 8px;
+            background: var(--negro);
+            color: var(--blanco);
+            outline: none;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--verde-jade);
+            box-shadow: 0 0 0 3px rgba(16,185,129,.12);
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        /* FAQ + BLOG */
+        #recursos {
+            background: var(--verde-oscuro);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        details {
+            background: var(--verde-claro);
+            color: var(--verde-oscuro);
+            margin-bottom: 10px;
+            border-radius: 9px;
+            padding: 15px 18px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--verde-oscuro);
+        }
+
+        .blog-card {
+            background: #071b14;
+            border: 1px solid var(--verde-esmeralda);
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .blog-card h3 {
+            color: var(--verde-pastel);
+            margin-bottom: 6px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020605;
+            border-top: 1px solid var(--verde-esmeralda);
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        footer h3 {
+            color: var(--verde-suave);
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            display: block;
+            color: var(--verde-salvia);
+            margin: 7px 0;
+            transition: .2s;
+        }
+
+        footer a:hover {
+            color: var(--verde-menta);
+            padding-left: 4px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .socials a {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: var(--verde-bosque);
+            color: var(--verde-pastel);
+            font-weight: bold;
+        }
+
+        .copyright {
+            border-top: 1px solid #113a2b;
+            margin-top: 35px;
+            padding-top: 17px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            color: var(--verde-salvia);
+            font-size: .82rem;
+        }
+
+        @media (max-width: 900px) {
+            .service-grid { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 82px;
+                left: 0;
+                right: 0;
+                padding: 15px;
+                background: var(--verde-oscuro);
+                flex-direction: column;
+                align-items: stretch;
+                border-bottom: 1px solid var(--verde-esmeralda);
+            }
+            nav ul.open { display: flex; }
+            .menu-btn { display: block; }
+        }
+
+        @media (max-width: 600px) {
+            .navbar { min-height: 72px; }
+            .logo-text span { display: none; }
+            .hero { min-height: 590px; }
+            .service-grid, .portfolio-grid, .mission-grid,
+            .resources-grid, .form-row, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            section { padding: 60px 0; }
+            .hero-badges { gap: 14px; }
+            .copyright { flex-direction: column; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a class="logo" href="#inicio" aria-label="Ucayali Green inicio">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                <strong>Ucayali Green</strong>
+                <span>Mantenimiento integral para un mejor futuro</span>
+            </div>
+        </a>
+
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+
+        <nav>
+            <ul id="menu">
+                <li><a class="active" href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#portafolio">Casos de éxito</a></li>
+                <li><a href="#recursos">Blog / FAQ</a></li>
+                <li><a href="contac.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section id="inicio" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="eyebrow">Mantenimiento integral</div>
+            <h1>Infraestructura <span>segura</span>, funcional y <span>sostenible</span></h1>
+            <p>
+                En <strong style="color:#34D399;">Ucayali Green</strong> brindamos soluciones
+                profesionales de mantenimiento en electricidad, gasfitería, pintura,
+                infraestructura, seguridad industrial y gestión ambiental.
+            </p>
+
+            <div class="buttons">
+                <a href="contac.html" class="btn btn-primary">Solicita tu cotización →</a>
+                <a href="#servicios" class="btn btn-outline">Conoce nuestros servicios</a>
+            </div>
+
+            <div class="hero-badges">
+                <div class="badge"><b>✓</b> Trabajo seguro y responsable</div>
+                <div class="badge"><b>♻</b> Compromiso ambiental</div>
+                <div class="badge"><b>★</b> Personal especializado</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="servicios">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-label">Nuestros servicios</div>
+            <h2>Soluciones para cada necesidad</h2>
+            <p>Servicios de mantenimiento preventivo y correctivo para hogares, comercios, oficinas, instituciones y plantas industriales.</p>
+        </div>
+
+        <div class="service-grid">
+            <article class="card">
+                <div class="icon">⚡</div>
+                <h3>Electricidad</h3>
+                <p>Instalación, mantenimiento y reparación de sistemas eléctricos, tableros, luminarias y redes.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🔧</div>
+                <h3>Gasfitería</h3>
+                <p>Instalación y reparación de redes de agua, desagüe, griferías, tuberías y sistemas sanitarios.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🎨</div>
+                <h3>Pintura</h3>
+                <p>Pintura interior y exterior para viviendas, oficinas, instituciones y espacios industriales.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🛠</div>
+                <h3>Carpintería y Drywall</h3>
+                <p>Trabajos en madera, melamina, divisiones, cielos rasos y estructuras en drywall.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">⛑</div>
+                <h3>Seguridad Industrial</h3>
+                <p>Implementación de medidas preventivas, señalización, equipos y procedimientos de seguridad.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🌱</div>
+                <h3>Gestión Ambiental</h3>
+                <p>Soluciones orientadas al manejo responsable de residuos y cuidado del medio ambiente.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🏢</div>
+                <h3>Mantenimiento de Infraestructura</h3>
+                <p>Mantenimiento general y adecuación de espacios inmobiliarios para conservar su funcionalidad.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🧰</div>
+                <h3>Mantenimiento Preventivo</h3>
+                <p>Inspecciones y acciones programadas para reducir fallas, costos y riesgos operativos.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🚨</div>
+                <h3>Emergencias y Correctivos</h3>
+                <p>Atención de incidencias y reparaciones necesarias para recuperar rápidamente la operación.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="nosotros">
+    <div class="container about-grid">
+        <div class="about-visual">
+            <div class="leaf-logo">🌿🏠</div>
+        </div>
+
+        <div class="about-text">
+            <div class="section-label">Sobre nosotros</div>
+            <h2>Ucayali Green</h2>
+            <p>
+                Somos una empresa dedicada al mantenimiento integral de infraestructura
+                inmobiliaria, con una visión orientada a la calidad del servicio,
+                seguridad de las personas y responsabilidad con el ambiente.
+            </p>
+
+            <div class="mission-grid">
+                <div class="mini-card">
+                    <h3>🎯 Misión</h3>
+                    <p>Brindar servicios de mantenimiento confiables, seguros y responsables, adaptados a las necesidades de cada cliente.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>👁 Visión</h3>
+                    <p>Ser una empresa reconocida por su excelencia en mantenimiento integral, seguridad y sostenibilidad.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>👷 Nuestro equipo</h3>
+                    <p>Personal técnico y profesionales comprometidos con el trabajo seguro y la calidad.</p>
+                </div>
+                <div class="mini-card">
+                    <h3>🌱 Valores</h3>
+                    <p>Responsabilidad, seguridad, calidad, respeto por el ambiente y orientación al cliente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portafolio">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-label">Casos de éxito / Portafolio</div>
+            <h2>Nuestros proyectos</h2>
+            <p>Ejemplos de servicios que Ucayali Green puede desarrollar para diferentes tipos de infraestructura.</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <article class="project">
+                <span>Electricidad</span>
+                <h3>Instalación y mantenimiento eléctrico</h3>
+            </article>
+            <article class="project">
+                <span>Gasfitería</span>
+                <h3>Sistemas de agua y desagüe</h3>
+            </article>
+            <article class="project">
+                <span>Pintura</span>
+                <h3>Pintura integral de instalaciones</h3>
+            </article>
+            <article class="project">
+                <span>Seguridad</span>
+                <h3>Implementación de seguridad industrial</h3>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="contacto">
+ 
+ <!--   <div class="container">
+        <div class="section-head">
+            <div class="section-label">Contacto</div>
+            <h2>Estamos listos para ayudarte</h2>
+            <p>Solicita información o una cotización para tu próximo proyecto.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>Teléfonos</strong>
+                        <a href="tel:+51979378035">979 378 035</a><br>
+                        <a href="tel:+51903563365">903 563 365</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <div>
+                        <strong>Correo electrónico</strong>
+                        <a href="mailto:pcwebperu@gmail.com">pcwebperu@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Ubicación</strong>
+                        Pucallpa, Ucayali – Perú
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕘</div>
+                    <div>
+                        <strong>Atención</strong>
+                        Lunes a sábado<br>8:00 a.m. – 6:00 p.m.
+                    </div>
+                </div>
+            </div>
+
+            <form action="https://formsubmit.co/pcwebperu@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Nueva solicitud de contacto - Ucayali Green">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="text" name="_honey" style="display:none">
+                <div class="form-row">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input id="telefono" name="telefono" type="tel" placeholder="Tu teléfono" required>
+                    </div>
+                </div>
+
+                <label for="email">Correo</label>
+                <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required>
+
+                <label for="servicio">Servicio de interés</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="">Selecciona un servicio</option>
+                    <option>Electricidad</option>
+                    <option>Gasfitería</option>
+                    <option>Pintura</option>
+                    <option>Carpintería y Drywall</option>
+                    <option>Seguridad Industrial</option>
+                    <option>Gestión Ambiental</option>
+                    <option>Mantenimiento de Infraestructura</option>
+                    <option>Otro</option>
+                </select>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué servicio necesitas..." required></textarea>
+
+                <button type="submit" class="btn btn-primary">Enviar solicitud →</button>
+            </form>
+        </div>
+    </div>
+-->
+</section>
+
+<section id="recursos">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-label">Preguntas frecuentes / Blog</div>
+            <h2>Información útil</h2>
+        </div>
+
+        <div class="resources-grid">
+            <div>
+                <details>
+                    <summary>¿Qué servicios ofrece Ucayali Green?</summary>
+                    <p>Ofrecemos mantenimiento eléctrico, gasfitería, pintura, carpintería, drywall, infraestructura, seguridad industrial y gestión ambiental.</p>
+                </details>
+                <details>
+                    <summary>¿Realizan mantenimiento preventivo?</summary>
+                    <p>Sí. Se pueden programar inspecciones y mantenimientos preventivos según las características de cada instalación.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo puedo solicitar una cotización?</summary>
+                    <p>Puedes comunicarte al 979 378 035 o 903 563 365, escribir a pcwebperu@gmail.com o utilizar el formulario de contacto.</p>
+                </details>
+                <details>
+                    <summary>¿Atienden empresas e instituciones?</summary>
+                    <p>Sí. Los servicios pueden adaptarse a viviendas, comercios, oficinas, instituciones y ambientes industriales.</p>
+                </details>
+            </div>
+
+            <div>
+                <article class="blog-card">
+                    <h3>🔧 ¿Por qué realizar mantenimiento preventivo?</h3>
+                    <p>El mantenimiento programado ayuda a detectar problemas antes de que generen interrupciones o reparaciones mayores.</p>
+                </article>
+                <article class="blog-card">
+                    <h3>⛑ Seguridad industrial en el trabajo</h3>
+                    <p>La prevención, capacitación y uso adecuado de equipos son componentes importantes de una cultura de trabajo seguro.</p>
+                </article>
+                <article class="blog-card">
+                    <h3>🌱 Mantenimiento y responsabilidad ambiental</h3>
+                    <p>Una adecuada gestión de residuos y el uso responsable de recursos contribuyen a reducir el impacto ambiental.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">
+                    <div class="logo-icon">🌿</div>
+                    <div class="logo-text">
+                        <strong>Ucayali Green</strong>
+                        <span>Mantenimiento integral</span>
+                    </div>
+                </div>
+                <p style="margin-top:15px;color:#879F87;">
+                    Mantenimiento hoy, bienestar siempre.
+                </p>
+            </div>
+
+            <div>
+                <h3>Enlaces de interés</h3>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#portafolio">Casos de éxito</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <div>
+                <h3>Enlaces legales</h3>
+                <a href="#privacidad">Política de privacidad</a>
+                <a href="#terminos">Términos y condiciones</a>
+                <a href="#recursos">Preguntas frecuentes (FAQ)</a>
+                <a href="#recursos">Blog / Recursos</a>
+            </div>
+
+            <div>
+                <h3>Síguenos</h3>
+                <p style="color:#879F87;">Encuéntranos en redes sociales.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◎</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <span>© 2026 Ucayali Green. Todos los derechos reservados.</span>
+            <span>Infraestructura • Seguridad • Ambiente</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Secciones legales mínimas para los enlaces del footer -->
+<div id="privacidad" style="display:none;"></div>
+<div id="terminos" style="display:none;"></div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("open");
+    }
+
+    document.querySelectorAll("nav a").forEach(link => {
+        link.addEventListener("click", () => {
+            document.getElementById("menu").classList.remove("open");
+        });
+    });
+</script>
+
+</body>
+</html>
